@@ -3,6 +3,8 @@ import path from "node:path";
 import Link from "next/link";
 import type { ContactLink, ProjectLink } from "@/types";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 interface Content {
   name: string;
   writingLabel: string;
@@ -46,7 +48,12 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-[28px]">
             <p data-bio>{c.bio}</p>
-            <div className="placeholder-rect" aria-hidden="true" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}/images/hero-placeholder.png`}
+              alt=""
+              className="hero-image"
+            />
           </div>
         </div>
 

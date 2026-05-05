@@ -83,11 +83,11 @@ main.home {
   line-height: 1.3;
 }
 
-.placeholder-rect {
+.hero-image {
   width: 500px;
   max-width: 100%;
-  height: 280px;
-  background: #000;
+  height: auto;
+  display: block;
 }
 
 .back-link {
