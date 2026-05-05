@@ -1,0 +1,68 @@
+{
+  "name": "Tarshaa Krishnaraj",
+  "writingLabel": "Writing",
+  "bio": "I build design and branded interfaces to solve difficult problems. I am the Brand Design lead at FLORA. I am excited about the challenge of designing technology to make our lives better.",
+  "projectsHeading": "01 Brand Design",
+  "projects": [
+    {
+      "href": "/product-innovation",
+      "title": "Product innovation",
+      "description": "Designed and innovated designs across product surfaces."
+    },
+    {
+      "href": "/dappled",
+      "title": "Design and Marketing",
+      "description": "Innovated Design and Marketing from Seed Stage to Series A."
+    },
+    {
+      "href": "/ocean",
+      "title": "Frontier AI Models",
+      "description": "Interactive SVG of digital memorabilia."
+    },
+    {
+      "href": "/garden",
+      "title": "Print",
+      "description": "Sketch of a sunlit field."
+    }
+  ],
+  "interactionsHeading": "02 Builds",
+  "interactions": [
+    {
+      "href": "/fog",
+      "title": "Creative Context CLI",
+      "description": "An exploration of cursor spotlights."
+    },
+    {
+      "href": "/spread",
+      "title": "Trailer Technologist",
+      "description": "Album layouts."
+    }
+  ],
+  "writingsHeading": "03 Writings",
+  "writings": [
+    {
+      "href": "/music",
+      "title": "Music is colorful",
+      "description": "On music, memories, and time."
+    }
+  ],
+  "contactHeading": "04 Contact",
+  "contactBody": "If something here resonates, please reach out! I’d love to connect :)",
+  "contacts": [
+    {
+      "label": "Email",
+      "href": "mailto:farayan365@gmail.com",
+      "external": false
+    },
+    {
+      "label": "X",
+      "href": "https://www.x.com/farayofsun",
+      "external": true
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/farayan/",
+      "external": true
+    }
+  ]
+}
