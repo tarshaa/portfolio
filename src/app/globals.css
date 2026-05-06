@@ -130,7 +130,7 @@ main.home {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: #9d8df1;
+  background: #a09889;
   pointer-events: none;
   transform: translate(-50%, -50%);
   animation: cursor-trail-fade 180ms ease-out forwards;
