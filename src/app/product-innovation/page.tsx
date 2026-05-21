@@ -28,6 +28,16 @@ export default function ProductInnovation() {
           controls
           className="project-media"
         />
+
+        <div className="flex flex-col gap-[22px]">
+          <h2>techniques</h2>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/techniques.gif`}
+            alt="techniques"
+            className="project-media"
+          />
+        </div>
       </main>
     </div>
   );
