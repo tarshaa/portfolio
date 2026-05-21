@@ -103,6 +103,12 @@ main.home {
   color: #5a5856;
 }
 
+.heading-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .project-media {
   width: 500px;
   max-width: 100%;

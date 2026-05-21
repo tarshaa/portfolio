@@ -31,7 +31,14 @@ export default function ProductInnovation() {
 
         <div className="flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
-            <h2>techniques</h2>
+            <a
+              href="https://flora.ai/techniques"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="heading-link"
+            >
+              <h2>techniques</h2>
+            </a>
             <p className="project-detail-blurb">Compressed generative ai workflows</p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
