@@ -37,7 +37,7 @@ export default function ProductInnovation() {
               rel="noopener noreferrer"
               className="heading-link"
             >
-              <h2>techniques</h2>
+              <h2>Techniques</h2>
             </a>
             <p className="project-detail-blurb">Compressed generative ai workflows</p>
           </div>
