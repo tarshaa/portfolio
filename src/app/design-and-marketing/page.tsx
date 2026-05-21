@@ -47,6 +47,26 @@ export default function DesignAndMarketing() {
             className="project-media"
           />
         </div>
+
+        <div className="flex flex-col gap-[22px]">
+          <div className="flex flex-col gap-[8px]">
+            <h2 className="no-divider">Product-Brand Bits</h2>
+            <a
+              href="https://flora.ai/pricing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              FLORA Pricing
+            </a>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/flora-pricing.png`}
+            alt="FLORA Pricing"
+            className="project-media"
+          />
+        </div>
       </main>
     </div>
   );

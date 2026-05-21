@@ -114,6 +114,14 @@ main.home {
   text-decoration: none;
 }
 
+.project-link {
+  align-self: flex-start;
+  font-size: 1rem;
+  color: #5a5856;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .project-media {
   width: 500px;
   max-width: 100%;
