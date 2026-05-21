@@ -13,18 +13,10 @@ export default function DesignAndMarketing() {
         <Link href="/" className="back-link">
           ← Back
         </Link>
-        <div className="flex flex-col gap-[8px]">
-          <h1>Design and Marketing</h1>
-          <p className="project-detail-blurb">
-            Innovated Design and Marketing from Seed Stage to Series A.
-          </p>
-        </div>
+        <h1>Design and Marketing</h1>
 
         <div className="flex flex-col gap-[22px]">
-          <div className="flex flex-col gap-[8px]">
-            <h2>FLORA Series A</h2>
-            <p className="project-detail-blurb">Design, Marketing</p>
-          </div>
+          <h2>FLORA Series A</h2>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/images/flora-series-a.gif`}
