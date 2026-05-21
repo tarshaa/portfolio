@@ -32,6 +32,16 @@ export default function DesignAndMarketing() {
             className="project-media"
           />
         </div>
+
+        <div className="flex flex-col gap-[22px]">
+          <h2 className="no-divider">FLORA Labs</h2>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/flora-labs-merch.png`}
+            alt="FLORA Labs"
+            className="project-media"
+          />
+        </div>
       </main>
     </div>
   );
