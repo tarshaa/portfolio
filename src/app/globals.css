@@ -116,8 +116,8 @@ main.home {
 
 .project-link {
   align-self: flex-start;
-  font-size: 1rem;
-  color: #5a5856;
+  font-size: 0.8rem;
+  color: var(--color-underline);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
