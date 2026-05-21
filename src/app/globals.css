@@ -60,6 +60,11 @@ main.home {
   border-bottom: 0.6px solid var(--color-underline);
 }
 
+.home h2.no-divider {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .project h3 {
   align-self: flex-start;
 }
