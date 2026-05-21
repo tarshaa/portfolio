@@ -34,11 +34,16 @@ export default function DesignAndMarketing() {
         </div>
 
         <div className="flex flex-col gap-[22px]">
-          <h2 className="no-divider">FLORA Labs</h2>
+          <div className="flex flex-col gap-[8px]">
+            <h2 className="no-divider">FLORA Merch Design</h2>
+            <p className="project-detail-blurb">
+              Worked with Michelle Ma to design merch and fundamental modular brand elements
+            </p>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/images/flora-labs-merch.png`}
-            alt="FLORA Labs"
+            alt="FLORA Merch Design"
             className="project-media"
           />
         </div>
