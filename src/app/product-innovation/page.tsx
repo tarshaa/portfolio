@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ZoomableImage } from "@/components/ZoomableImage";
 
 export const metadata = {
   title: "Product innovation — Tarshaa Krishnaraj",
@@ -41,8 +42,7 @@ export default function ProductInnovation() {
             </a>
             <p className="project-detail-blurb">Compressed generative ai workflows</p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ZoomableImage
             src={`${basePath}/images/techniques.gif`}
             alt="techniques"
             className="project-media"

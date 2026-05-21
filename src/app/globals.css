@@ -166,3 +166,32 @@ main.home {
     transform: translate(-50%, -50%) scale(0.4);
   }
 }
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 14, 13, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+  z-index: 200;
+  animation: lightbox-fade-in 150ms ease-out;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@keyframes lightbox-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

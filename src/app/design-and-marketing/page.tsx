@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ZoomableImage } from "@/components/ZoomableImage";
 
 export const metadata = {
   title: "Design and Marketing — Tarshaa Krishnaraj",
@@ -25,8 +26,7 @@ export default function DesignAndMarketing() {
             <h2 className="no-divider">FLORA Series A</h2>
             <p className="project-detail-blurb">Design, Marketing</p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ZoomableImage
             src={`${basePath}/images/flora-series-a.gif`}
             alt="FLORA Series A"
             className="project-media"
@@ -40,8 +40,7 @@ export default function DesignAndMarketing() {
               Worked with Michelle Ma to design merch and fundamental modular brand elements
             </p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ZoomableImage
             src={`${basePath}/images/flora-labs-merch.png`}
             alt="FLORA Merch Design"
             className="project-media"
@@ -60,8 +59,7 @@ export default function DesignAndMarketing() {
               FLORA Pricing
             </a>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ZoomableImage
             src={`${basePath}/images/flora-pricing.png`}
             alt="FLORA Pricing"
             className="project-media"
