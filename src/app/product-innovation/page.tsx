@@ -30,7 +30,10 @@ export default function ProductInnovation() {
         />
 
         <div className="flex flex-col gap-[22px]">
-          <h2>techniques</h2>
+          <div className="flex flex-col gap-[8px]">
+            <h2>techniques</h2>
+            <p className="project-detail-blurb">Compressed generative ai workflows</p>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/images/techniques.gif`}
