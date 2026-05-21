@@ -22,6 +22,14 @@ export default function FrontierAIModels() {
               Tested, documented, and evaluated each model across AI workflows. Designed
               visuals and content to showcase real-world use cases.
             </p>
+            <a
+              href="https://x.com/floraai/status/2001693962038325408?s=20"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              O3 Deep Research
+            </a>
           </div>
           <video
             src={`${basePath}/videos/gif-o3.mp4`}
