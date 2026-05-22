@@ -30,6 +30,8 @@ main.home {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .home h1 {
@@ -202,7 +204,7 @@ main.home {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   transition: opacity 400ms ease-out;
 }
 
@@ -216,8 +218,8 @@ body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
 
 .wrench {
   position: absolute;
-  width: 200px;
-  opacity: 0.2;
+  width: 220px;
+  opacity: 0.35;
   user-select: none;
   -webkit-user-drag: none;
   animation-iteration-count: infinite;
