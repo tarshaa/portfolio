@@ -218,7 +218,7 @@ body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
 
 .wrench {
   position: absolute;
-  width: 220px;
+  width: 380px;
   opacity: 0.35;
   user-select: none;
   -webkit-user-drag: none;
@@ -227,32 +227,32 @@ body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
 }
 
 .wrench-1 {
-  top: 10%;
-  left: 5%;
+  top: 8%;
+  left: 4%;
   animation-name: wrench-float-a;
   animation-duration: 28s;
 }
 
 .wrench-2 {
-  top: 64%;
-  left: 8%;
-  width: 160px;
+  top: 62%;
+  left: 6%;
+  width: 300px;
   animation-name: wrench-float-b;
   animation-duration: 42s;
 }
 
 .wrench-3 {
-  top: 18%;
-  right: 7%;
-  width: 240px;
+  top: 14%;
+  right: 5%;
+  width: 440px;
   animation-name: wrench-float-c;
   animation-duration: 36s;
 }
 
 .wrench-4 {
-  bottom: 10%;
-  right: 14%;
-  width: 180px;
+  bottom: 8%;
+  right: 10%;
+  width: 340px;
   animation-name: wrench-float-d;
   animation-duration: 50s;
 }
