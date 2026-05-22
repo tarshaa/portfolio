@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import Link from "next/link";
 import { ZoomableImage } from "@/components/ZoomableImage";
+import { WrenchBackground } from "@/components/WrenchBackground";
 import type { ContactLink, ProjectLink } from "@/types";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -27,8 +28,10 @@ async function getContent(): Promise<Content> {
 }
 
 function ProjectCard({ project }: { project: ProjectLink }) {
+  const hoverClass =
+    project.href === "/product-innovation" ? "product-innovation-link" : undefined;
   return (
-    <Link href={project.href}>
+    <Link href={project.href} className={hoverClass}>
       <div className="project flex flex-col gap-[6px]">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
@@ -41,6 +44,7 @@ export default async function Home() {
   const c = await getContent();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
+      <WrenchBackground hoverOnly />
       <main className="home flex flex-col gap-[36px] row-start-2 sm:items-start">
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-col gap-[6px]">

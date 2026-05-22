@@ -195,3 +195,86 @@ main.home {
     opacity: 1;
   }
 }
+
+/* Floating wrench background — used on /product-innovation, and on the home
+   page only when the Product Innovation link is hovered. */
+.wrench-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 400ms ease-out;
+}
+
+.wrench-bg-hover-only {
+  opacity: 0;
+}
+
+body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
+  opacity: 1;
+}
+
+.wrench {
+  position: absolute;
+  width: 200px;
+  opacity: 0.2;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.wrench-1 {
+  top: 10%;
+  left: 5%;
+  animation-name: wrench-float-a;
+  animation-duration: 28s;
+}
+
+.wrench-2 {
+  top: 64%;
+  left: 8%;
+  width: 160px;
+  animation-name: wrench-float-b;
+  animation-duration: 42s;
+}
+
+.wrench-3 {
+  top: 18%;
+  right: 7%;
+  width: 240px;
+  animation-name: wrench-float-c;
+  animation-duration: 36s;
+}
+
+.wrench-4 {
+  bottom: 10%;
+  right: 14%;
+  width: 180px;
+  animation-name: wrench-float-d;
+  animation-duration: 50s;
+}
+
+@keyframes wrench-float-a {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-30px); }
+  100% { transform: rotate(360deg) translateY(0); }
+}
+
+@keyframes wrench-float-b {
+  0% { transform: rotate(0deg) translateX(0) scaleX(-1); }
+  50% { transform: rotate(-180deg) translateX(40px) scaleX(-1); }
+  100% { transform: rotate(-360deg) translateX(0) scaleX(-1); }
+}
+
+@keyframes wrench-float-c {
+  0% { transform: rotate(15deg) translateY(0) scaleX(-1); }
+  50% { transform: rotate(195deg) translateY(20px) scaleX(-1); }
+  100% { transform: rotate(375deg) translateY(0) scaleX(-1); }
+}
+
+@keyframes wrench-float-d {
+  0% { transform: rotate(-20deg) translateX(0); }
+  50% { transform: rotate(-200deg) translateX(-35px); }
+  100% { transform: rotate(-380deg) translateX(0); }
+}
