@@ -40,6 +40,14 @@ export default function FrontierAIModels() {
             controls
             className="project-media"
           />
+          <a
+            href="https://flora.ai/blog/tasting-notes-claude-opus-4.5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            Tasting Notes - Taste Benching Models ↗
+          </a>
         </div>
       </main>
     </div>

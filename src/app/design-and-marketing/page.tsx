@@ -24,7 +24,9 @@ export default function DesignAndMarketing() {
         <div className="flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
             <h2 className="no-divider">FLORA Series A</h2>
-            <p className="project-detail-blurb">Design, Marketing</p>
+            <p className="project-detail-blurb">
+              Scripted, filmed and edited the Series A $40M announcement.
+            </p>
           </div>
           <ZoomableImage
             src={`${basePath}/images/flora-series-a.gif`}
