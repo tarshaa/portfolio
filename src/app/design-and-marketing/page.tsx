@@ -21,7 +21,14 @@ export default function DesignAndMarketing() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-[22px]">
+        <div className="flex flex-col gap-[6px]">
+          <a href="#flora-series-a" className="project-link">+ FLORA Series A</a>
+          <a href="#flora-merch-design" className="project-link">+ FLORA Merch Design</a>
+          <a href="#product-brand-bits" className="project-link">+ Product-Brand Bits</a>
+          <a href="#flora-mcp-api" className="project-link">+ FLORA MCP + API</a>
+        </div>
+
+        <div id="flora-series-a" className="project-block flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
             <h2 className="no-divider">FLORA Series A</h2>
             <p className="project-detail-blurb">
@@ -35,7 +42,7 @@ export default function DesignAndMarketing() {
           />
         </div>
 
-        <div className="flex flex-col gap-[22px]">
+        <div id="flora-merch-design" className="project-block flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
             <h2 className="no-divider">FLORA Merch Design</h2>
             <p className="project-detail-blurb">
@@ -49,7 +56,7 @@ export default function DesignAndMarketing() {
           />
         </div>
 
-        <div className="flex flex-col gap-[22px]">
+        <div id="product-brand-bits" className="project-block flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
             <h2 className="no-divider">Product-Brand Bits</h2>
             <a
@@ -64,6 +71,24 @@ export default function DesignAndMarketing() {
           <ZoomableImage
             src={`${basePath}/images/flora-pricing.png`}
             alt="FLORA Pricing"
+            className="project-media"
+          />
+        </div>
+
+        <div id="flora-mcp-api" className="project-block flex flex-col gap-[22px]">
+          <div className="flex flex-col gap-[8px]">
+            <h2 className="no-divider">FLORA MCP + API</h2>
+            <p className="project-detail-blurb">
+              Brand and launch design for FLORA&apos;s developer platform.
+            </p>
+          </div>
+          <video
+            src={`${basePath}/videos/flora-mcp-api.mp4`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
             className="project-media"
           />
         </div>
