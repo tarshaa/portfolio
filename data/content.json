@@ -1,6 +1,5 @@
 {
   "name": "Tarshaa Krishnaraj",
-  "writingLabel": "Writing",
   "bio": "Designing objects, interfaces, hardware. Currently leading Brand at FLORA.",
   "projectsHeading": "01 Brand Design",
   "projects": [
@@ -12,56 +11,55 @@
     {
       "href": "/design-and-marketing",
       "title": "Design and Marketing",
-      "description": "Innovated Design and Marketing from Seed Stage to Series A."
+      "description": "Design and Marketing from Seed to Series A, plus technical work for FLORA's API and MCP."
     },
     {
       "href": "/frontier-ai-models",
       "title": "Frontier AI Models",
-      "description": "Interactive SVG of digital memorabilia."
+      "description": "Taste-benching and writing tasting notes on frontier AI models."
     },
     {
       "href": "/print",
       "title": "Print",
-      "description": "Operating Manual — December 2025."
+      "description": "Operating Manual, 2025\nField Guide, 2025"
     }
   ],
   "interactionsHeading": "02 Builds",
   "interactions": [
     {
-      "href": "/fog",
+      "href": "/creative-context-cli",
       "title": "Creative Context CLI",
-      "description": "An exploration of cursor spotlights."
+      "description": "Sync Pinterest boards locally so Claude can search them."
     },
     {
-      "href": "/spread",
+      "href": "/trailer-technologist",
       "title": "Trailer Technologist",
-      "description": "Album layouts."
+      "description": "Cut trailers, films, and social for Magnolia Pictures."
     }
   ],
   "writingsHeading": "03 Writings",
   "writings": [
     {
-      "href": "/music",
-      "title": "Music is colorful",
-      "description": "On music, memories, and time."
+      "href": "https://tunatartar.substack.com",
+      "title": "Essays on technology, attention, and what we notice. ↗",
+      "description": "",
+      "external": true
     }
   ],
-  "contactHeading": "04 Contact",
-  "contactBody": "If something here resonates, please reach out! I’d love to connect :)",
   "contacts": [
     {
       "label": "Email",
-      "href": "mailto:farayan365@gmail.com",
+      "href": "mailto:tarshaakrishnaraj@gmail.com",
       "external": false
     },
     {
       "label": "X",
-      "href": "https://www.x.com/farayofsun",
+      "href": "https://x.com/tartartuna",
       "external": true
     },
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/farayan/",
+      "href": "https://www.linkedin.com/in/tarshaakrishnaraj/",
       "external": true
     }
   ]

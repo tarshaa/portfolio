@@ -2,6 +2,7 @@ export interface ProjectLink {
   href: string;
   title: string;
   description: string;
+  external?: boolean;
 }
 
 export interface ContactLink {

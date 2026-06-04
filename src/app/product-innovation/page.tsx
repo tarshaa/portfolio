@@ -3,7 +3,7 @@ import { ZoomableImage } from "@/components/ZoomableImage";
 import { WrenchBackground } from "@/components/WrenchBackground";
 
 export const metadata = {
-  title: "Product innovation — Tarshaa Krishnaraj",
+  title: "Product innovation | Tarshaa Krishnaraj",
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

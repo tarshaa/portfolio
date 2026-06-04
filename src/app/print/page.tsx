@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ZoomableImage } from "@/components/ZoomableImage";
 
 export const metadata = {
-  title: "Print — Tarshaa Krishnaraj",
+  title: "Print | Tarshaa Krishnaraj",
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -19,15 +19,33 @@ export default function Print() {
         <div className="self-start flex flex-col gap-[8px]">
           <h1>Print</h1>
           <p className="project-detail-blurb">
-            Operating Manual — December 2025.
+            Operating Manual, December 2025.
           </p>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${basePath}/images/operating-manual-hero.gif`}
-          alt="Operating Manual"
-          className="print-hero"
-        />
+        <div className="print-hero-row">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/operating-manual-hero.gif`}
+            alt="Operating Manual"
+            className="print-hero"
+          />
+          <div className="print-hero-text">
+            <p>
+              The Operating Manual is FLORA&apos;s first printed edition, a
+              field guide that frames generative AI as a new operating layer
+              for creative work. It was made for the enterprises and teams
+              just stepping into this shift, who need a way in that isn&apos;t
+              hype or jargon.
+            </p>
+            <p>
+              The book maps the workflows, principles, and emerging systems
+              already taking shape, so the move to AI feels less like overhead
+              and more like opening a door. The aim was simple: make adoption
+              approachable, and make creative work with AI feel like something
+              to lean into, not endure.
+            </p>
+          </div>
+        </div>
         <div className="print-grid">
           {PAGES.map((n) => (
             <ZoomableImage

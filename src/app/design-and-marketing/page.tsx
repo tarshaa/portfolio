@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ZoomableImage } from "@/components/ZoomableImage";
 
 export const metadata = {
-  title: "Design and Marketing — Tarshaa Krishnaraj",
+  title: "Design and Marketing | Tarshaa Krishnaraj",
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

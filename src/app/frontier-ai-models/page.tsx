@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Frontier AI Models — Tarshaa Krishnaraj",
+  title: "Frontier AI Models | Tarshaa Krishnaraj",
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -47,6 +47,14 @@ export default function FrontierAIModels() {
             className="project-link"
           >
             Tasting Notes - Taste Benching Models ↗
+          </a>
+          <a
+            href="https://flora.ai/blog/tasting-notes-recraft-v4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            Tasting Notes - Recraft V4 ↗
           </a>
         </div>
       </main>
