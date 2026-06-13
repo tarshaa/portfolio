@@ -26,6 +26,7 @@ const GROUPS: { key: string; items: PreviewItem[] }[] = [
       { kind: "img", src: "/images/operating-manual-hero.gif", slot: 1 },
       { kind: "img", src: "/images/operating-manual/operating-manual-1.png", slot: 2 },
       { kind: "img", src: "/images/operating-manual/operating-manual-4.png", slot: 3 },
+      { kind: "img", src: "/images/operating-manual/operating-manual-3.png", slot: 4 },
     ],
   },
   {

@@ -384,9 +384,9 @@ body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
   width: min(32vw, 420px);
 }
 
-/* Print: hero gif left, two spreads on the right. */
+/* Print: 4 items, four-corner layout. */
 .hp-print-1 {
-  top: 10%;
+  top: 6%;
   left: 2%;
   width: min(22vw, 280px);
   background: transparent;
@@ -394,10 +394,15 @@ body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
 .hp-print-2 {
   top: 4%;
   right: 2%;
-  width: min(32vw, 420px);
+  width: min(30vw, 380px);
 }
 .hp-print-3 {
   bottom: 8%;
+  left: 2%;
+  width: min(30vw, 380px);
+}
+.hp-print-4 {
+  bottom: 6%;
   right: 2%;
   width: min(30vw, 380px);
 }

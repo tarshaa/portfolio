@@ -95,7 +95,7 @@ export default async function Home() {
           <div className="flex flex-col gap-[28px]">
             <p data-bio>{c.bio}</p>
             <ZoomableImage
-              src={`${basePath}/images/hero-placeholder.png`}
+              src={`${basePath}/images/hero.jpg`}
               alt=""
               className="hero-image"
             />
