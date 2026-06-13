@@ -319,6 +319,114 @@ body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
   opacity: 1;
 }
 
+/* Per-project hover previews on the home page. Each .hover-group is a
+   fixed full-viewport layer that fades in when its matching link is
+   hovered. Media items are anchored in the left/right gutters around the
+   centered ~500px content column. Some intentionally clip off-edge. */
+.hover-group {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.hp {
+  position: absolute;
+  display: block;
+  height: auto;
+  border-radius: 2px;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body:has(.design-and-marketing-link:hover) .hover-group--design-and-marketing,
+body:has(.frontier-ai-models-link:hover)    .hover-group--frontier-ai-models,
+body:has(.print-link:hover)                 .hover-group--print,
+body:has(.creative-context-cli-link:hover)  .hover-group--creative-context-cli,
+body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
+  opacity: 1;
+}
+
+/* Widths use min(Xvw, Ypx) so items fill the gutter on small windows
+   but cap at sensible pixel sizes on huge displays. The centered text
+   column is ~500px, so each gutter is roughly (100vw - 500px) / 2. */
+
+/* Design and Marketing: 4 items in the four gutter quadrants. */
+.hp-design-and-marketing-1 {
+  top: 6%;
+  left: 2%;
+  width: min(30vw, 380px);
+}
+.hp-design-and-marketing-2 {
+  top: 4%;
+  right: 2%;
+  width: min(28vw, 360px);
+}
+.hp-design-and-marketing-3 {
+  bottom: 8%;
+  left: 2%;
+  width: min(30vw, 380px);
+}
+.hp-design-and-marketing-4 {
+  bottom: 6%;
+  right: 2%;
+  width: min(30vw, 380px);
+}
+
+/* Frontier AI Models: single video, right gutter mid-page. */
+.hp-frontier-ai-models-1 {
+  top: 24%;
+  right: 2%;
+  width: min(32vw, 420px);
+}
+
+/* Print: hero gif left, two spreads on the right. */
+.hp-print-1 {
+  top: 10%;
+  left: 2%;
+  width: min(22vw, 280px);
+  background: transparent;
+}
+.hp-print-2 {
+  top: 4%;
+  right: 2%;
+  width: min(32vw, 420px);
+}
+.hp-print-3 {
+  bottom: 8%;
+  right: 2%;
+  width: min(30vw, 380px);
+}
+
+/* Creative Context CLI: single video, left gutter mid-page. */
+.hp-creative-context-cli-1 {
+  top: 22%;
+  left: 2%;
+  width: min(32vw, 420px);
+}
+
+/* Trailer Technologist: two videos, opposite corners. */
+.hp-trailer-technologist-1 {
+  top: 8%;
+  left: 2%;
+  width: min(32vw, 420px);
+}
+.hp-trailer-technologist-2 {
+  bottom: 8%;
+  right: 2%;
+  width: min(32vw, 420px);
+}
+
+@media screen and (max-width: 760px) {
+  .hover-group {
+    display: none;
+  }
+}
+
 .wrench {
   position: absolute;
   width: 1000px;
