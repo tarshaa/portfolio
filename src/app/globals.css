@@ -16,13 +16,27 @@
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-mono);
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.5;
     letter-spacing: -0.0275em;
+  }
+  h1 {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
   }
 }
 
@@ -34,28 +48,12 @@ main.home {
   z-index: 1;
 }
 
-.home h1 {
-  font-size: 1.05rem;
-  line-height: 1.3;
-}
-
 .home [data-bio] {
-  font-size: 1rem;
   color: #5a5856;
-}
-
-.home .writing-label {
-  align-self: flex-start;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--color-underline);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .home .name-contacts a {
   font-size: 0.75rem;
-  font-weight: 400;
   color: var(--color-underline);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -64,8 +62,6 @@ main.home {
 .home h2 {
   position: relative;
   width: 500px;
-  font-size: 0.95rem;
-  line-height: 1.3;
   padding-bottom: 0.1rem;
   border-bottom: 0.6px solid var(--color-underline);
 }
@@ -81,7 +77,6 @@ main.home {
 
 .contact a,
 .project h3 {
-  font-weight: 400;
   font-size: 1rem;
   text-decoration: none;
   border-bottom: 0.6px solid var(--color-underline);
@@ -93,7 +88,6 @@ main.home {
 }
 
 .project p {
-  font-weight: 300;
   font-size: 1rem;
   line-height: 1.3;
 }
@@ -126,7 +120,7 @@ main.home {
 
 .project-link {
   align-self: flex-start;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-underline);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -178,8 +172,8 @@ main.print-page {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #5a5856;
 }
 
@@ -309,6 +303,12 @@ html {
   pointer-events: none;
   z-index: 0;
   transition: opacity 400ms ease-out;
+}
+
+@media screen and (max-width: 760px) {
+  .wrench-bg {
+    display: none;
+  }
 }
 
 .wrench-bg-hover-only {
