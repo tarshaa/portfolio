@@ -2,7 +2,6 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import Link from "next/link";
 import { ZoomableImage } from "@/components/ZoomableImage";
-import { WrenchBackground } from "@/components/WrenchBackground";
 import { HoverPreviews } from "@/components/HoverPreviews";
 import type { ContactLink, ProjectLink } from "@/types";
 
@@ -34,40 +33,54 @@ const HOVER_CLASSES: Record<string, string> = {
   "/trailer-technologist": "trailer-technologist-link",
 };
 
+const INLINE_PREVIEWS: Record<string, string> = {
+  "/frontier-ai-models": "/videos/gif-o3.mp4",
+  "/creative-context-cli": "/videos/creative-context-cli.mp4",
+};
+
 function ProjectCard({ project }: { project: ProjectLink }) {
   const hoverClass = HOVER_CLASSES[project.href];
   const inner = (
     <div className="project flex flex-col gap-[6px]">
-      <h3>{project.title}</h3>
+      <h3 className={hoverClass}>{project.title}</h3>
       {project.description && (
         <p className="whitespace-pre-line">{project.description}</p>
       )}
     </div>
   );
-  if (project.external) {
+  const wrapped = project.external ? (
+    <a href={project.href} target="_blank" rel="noopener noreferrer">
+      {inner}
+    </a>
+  ) : (
+    <Link href={project.href}>{inner}</Link>
+  );
+
+  const inlineSrc = INLINE_PREVIEWS[project.href];
+  if (inlineSrc) {
     return (
-      <a
-        href={project.href}
-        className={hoverClass}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {inner}
-      </a>
+      <div className="project-row">
+        {wrapped}
+        <video
+          src={`${basePath}${inlineSrc}`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="row-hover-preview"
+          aria-hidden="true"
+        />
+      </div>
     );
   }
-  return (
-    <Link href={project.href} className={hoverClass}>
-      {inner}
-    </Link>
-  );
+  return wrapped;
 }
 
 export default async function Home() {
   const c = await getContent();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
-      <WrenchBackground hoverOnly />
       <HoverPreviews />
       <main className="home flex flex-col gap-[36px] row-start-2 sm:items-start">
         <div className="flex flex-col gap-[32px]">

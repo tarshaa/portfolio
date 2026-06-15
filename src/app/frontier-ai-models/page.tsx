@@ -9,7 +9,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export default function FrontierAIModels() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
-      <main className="home flex flex-col gap-[28px] row-start-2 sm:items-start">
+      <main className="home detail-page flex flex-col gap-[28px] row-start-2 sm:items-start">
         <Link href="/" className="back-link">
           ← Back
         </Link>

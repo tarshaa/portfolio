@@ -76,7 +76,11 @@ export function CursorTrail() {
       aria-hidden="true"
     >
       {dots.map((d) => (
-        <span key={d.id} className="cursor-trail-dot" style={{ left: d.x, top: d.y }} />
+        <span
+          key={d.id}
+          className={`cursor-trail-dot cursor-trail-dot--${d.id % 2 === 0 ? "a" : "b"}`}
+          style={{ left: d.x, top: d.y }}
+        />
       ))}
     </div>
   );

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ZoomableImage } from "@/components/ZoomableImage";
 import { WrenchBackground } from "@/components/WrenchBackground";
 
 export const metadata = {
@@ -12,7 +11,7 @@ export default function ProductInnovation() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
       <WrenchBackground />
-      <main className="home flex flex-col gap-[28px] row-start-2 sm:items-start">
+      <main className="home detail-page flex flex-col gap-[28px] row-start-2 sm:items-start">
         <Link href="/" className="back-link">
           ← Back
         </Link>
@@ -44,9 +43,13 @@ export default function ProductInnovation() {
             </a>
             <p className="project-detail-blurb">Compressed generative ai workflows</p>
           </div>
-          <ZoomableImage
-            src={`${basePath}/images/techniques.gif`}
-            alt="techniques"
+          <video
+            src={`${basePath}/videos/techniques.mp4`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
             className="project-media"
           />
         </div>

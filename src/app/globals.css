@@ -72,14 +72,14 @@ main.home {
 }
 
 .project h3 {
-  align-self: flex-start;
+  display: block;
+  width: 100%;
 }
 
 .contact a,
 .project h3 {
   font-size: 1rem;
   text-decoration: none;
-  border-bottom: 0.6px solid var(--color-underline);
   line-height: 116%;
 }
 
@@ -90,6 +90,7 @@ main.home {
 .project p {
   font-size: 1rem;
   line-height: 1.3;
+  color: #5a5856;
 }
 
 .hero-image {
@@ -137,6 +138,22 @@ main.home {
 
 #product-brand-bits .project-media {
   width: 640px;
+}
+
+/* Subpages (everything that lists a project's full content) widen the
+   centered column and its media so the work has way less side padding
+   than the home page's intimate 500px column. */
+main.home.detail-page,
+main.home.detail-page h2 {
+  width: min(720px, calc(100vw - 4rem));
+}
+main.detail-page .project-media,
+main.detail-page .hero-image {
+  width: 100%;
+  max-width: 720px;
+}
+main.detail-page #product-brand-bits .project-media {
+  max-width: 720px;
 }
 
 /* Print page: wider than home, centered on the page. */
@@ -248,11 +265,18 @@ html {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: #a09889;
   pointer-events: none;
   transform: translate(-50%, -50%);
   animation: cursor-trail-fade 180ms ease-out forwards;
   will-change: opacity, transform;
+}
+
+.cursor-trail-dot--a {
+  background: #dcf08c;
+}
+
+.cursor-trail-dot--b {
+  background: #aab2e4;
 }
 
 @keyframes cursor-trail-fade {
@@ -343,7 +367,8 @@ body:has(.product-innovation-link:hover) .wrench-bg-hover-only {
   -webkit-user-drag: none;
 }
 
-body:has(.design-and-marketing-link:hover) .hover-group--design-and-marketing,
+body:has(.product-innovation-link:hover)    .hover-group--product-innovation,
+body:has(.design-and-marketing-link:hover)  .hover-group--design-and-marketing,
 body:has(.frontier-ai-models-link:hover)    .hover-group--frontier-ai-models,
 body:has(.print-link:hover)                 .hover-group--print,
 body:has(.creative-context-cli-link:hover)  .hover-group--creative-context-cli,
@@ -351,79 +376,119 @@ body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
   opacity: 1;
 }
 
-/* Widths use min(Xvw, Ypx) so items fill the gutter on small windows
-   but cap at sensible pixel sizes on huge displays. The centered text
-   column is ~500px, so each gutter is roughly (100vw - 500px) / 2. */
+/* Small items with visible white margin around them, anchored a comfortable
+   distance from the viewport edge. */
+:root {
+  --hp-gutter: clamp(180px, 20vw, 300px);
+}
+
+/* Inline row hover preview: anchored to the project row, appears in the
+   right gutter at the exact vertical position of the title. */
+.project-row {
+  position: relative;
+}
+
+.row-hover-preview {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 1.5rem;
+  transform: translateY(-50%);
+  width: var(--hp-gutter);
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-out;
+}
+
+.project-row:has(.frontier-ai-models-link:hover) .row-hover-preview,
+.project-row:has(.creative-context-cli-link:hover) .row-hover-preview {
+  opacity: 1;
+}
+
+@media screen and (max-width: 760px) {
+  .row-hover-preview {
+    display: none;
+  }
+}
+
+/* Product Innovation: 2 videos, opposite gutter corners. */
+.hp-product-innovation-1 {
+  top: 8%;
+  left: 4%;
+  width: var(--hp-gutter);
+}
+.hp-product-innovation-2 {
+  bottom: 8%;
+  right: 4%;
+  width: var(--hp-gutter);
+}
 
 /* Design and Marketing: 4 items in the four gutter quadrants. */
 .hp-design-and-marketing-1 {
   top: 6%;
-  left: 2%;
-  width: min(30vw, 380px);
+  left: 4%;
+  width: var(--hp-gutter);
 }
 .hp-design-and-marketing-2 {
-  top: 4%;
-  right: 2%;
-  width: min(28vw, 360px);
+  top: 6%;
+  right: 4%;
+  width: var(--hp-gutter);
 }
 .hp-design-and-marketing-3 {
   bottom: 8%;
-  left: 2%;
-  width: min(30vw, 380px);
+  left: 4%;
+  width: var(--hp-gutter);
 }
 .hp-design-and-marketing-4 {
-  bottom: 6%;
-  right: 2%;
-  width: min(30vw, 380px);
+  bottom: 8%;
+  right: 4%;
+  width: var(--hp-gutter);
 }
 
-/* Frontier AI Models: single video, right gutter mid-page. */
-.hp-frontier-ai-models-1 {
-  top: 24%;
-  right: 2%;
-  width: min(32vw, 420px);
-}
+/* Frontier AI Models uses an inline preview anchored to its project row,
+   so its hover preview always sits beside its title (see .row-hover-preview). */
 
-/* Print: 4 items, four-corner layout. */
+/* Print: 4 items, four-corner layout (hero gif intentionally smaller). */
 .hp-print-1 {
   top: 6%;
-  left: 2%;
-  width: min(22vw, 280px);
+  left: 4%;
+  width: calc(var(--hp-gutter) * 0.65);
   background: transparent;
 }
 .hp-print-2 {
-  top: 4%;
-  right: 2%;
-  width: min(30vw, 380px);
+  top: 6%;
+  right: 4%;
+  width: var(--hp-gutter);
 }
 .hp-print-3 {
   bottom: 8%;
-  left: 2%;
-  width: min(30vw, 380px);
+  left: 4%;
+  width: var(--hp-gutter);
 }
 .hp-print-4 {
-  bottom: 6%;
-  right: 2%;
-  width: min(30vw, 380px);
+  bottom: 8%;
+  right: 4%;
+  width: var(--hp-gutter);
 }
 
-/* Creative Context CLI: single video, left gutter mid-page. */
-.hp-creative-context-cli-1 {
-  top: 22%;
-  left: 2%;
-  width: min(32vw, 420px);
-}
+/* Creative Context CLI uses an inline preview anchored to its project row
+   (see .row-hover-preview), same as Frontier AI Models. */
 
 /* Trailer Technologist: two videos, opposite corners. */
 .hp-trailer-technologist-1 {
   top: 8%;
-  left: 2%;
-  width: min(32vw, 420px);
+  left: 4%;
+  width: var(--hp-gutter);
 }
 .hp-trailer-technologist-2 {
   bottom: 8%;
-  right: 2%;
-  width: min(32vw, 420px);
+  right: 4%;
+  width: var(--hp-gutter);
 }
 
 @media screen and (max-width: 760px) {

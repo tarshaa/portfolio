@@ -8,6 +8,13 @@ interface PreviewItem {
 
 const GROUPS: { key: string; items: PreviewItem[] }[] = [
   {
+    key: "product-innovation",
+    items: [
+      { kind: "video", src: "/videos/flora-blackfriday-promo.mp4", slot: 1 },
+      { kind: "video", src: "/videos/techniques.mp4", slot: 2 },
+    ],
+  },
+  {
     key: "design-and-marketing",
     items: [
       { kind: "img", src: "/images/flora-series-a.gif", slot: 1 },
@@ -17,10 +24,6 @@ const GROUPS: { key: string; items: PreviewItem[] }[] = [
     ],
   },
   {
-    key: "frontier-ai-models",
-    items: [{ kind: "video", src: "/videos/gif-o3.mp4", slot: 1 }],
-  },
-  {
     key: "print",
     items: [
       { kind: "img", src: "/images/operating-manual-hero.gif", slot: 1 },
@@ -28,10 +31,6 @@ const GROUPS: { key: string; items: PreviewItem[] }[] = [
       { kind: "img", src: "/images/operating-manual/operating-manual-4.png", slot: 3 },
       { kind: "img", src: "/images/operating-manual/operating-manual-3.png", slot: 4 },
     ],
-  },
-  {
-    key: "creative-context-cli",
-    items: [{ kind: "video", src: "/videos/creative-context-cli.mp4", slot: 1 }],
   },
   {
     key: "trailer-technologist",
