@@ -18,7 +18,6 @@ const GROUPS: { key: string; items: PreviewItem[] }[] = [
     key: "design-and-marketing",
     items: [
       { kind: "img", src: "/images/flora-series-a.gif", slot: 1 },
-      { kind: "img", src: "/images/flora-labs-merch.png", slot: 2 },
       { kind: "img", src: "/images/flora-pricing.png", slot: 3 },
       { kind: "video", src: "/videos/flora-mcp-api.mp4", slot: 4 },
     ],
