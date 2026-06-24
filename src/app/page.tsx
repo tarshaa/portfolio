@@ -28,7 +28,6 @@ const HOVER_CLASSES: Record<string, string> = {
   "/product-innovation": "product-innovation-link",
   "/design-and-marketing": "design-and-marketing-link",
   "/frontier-ai-models": "frontier-ai-models-link",
-  "/print": "print-link",
   "/creative-context-cli": "creative-context-cli-link",
   "/trailer-technologist": "trailer-technologist-link",
 };

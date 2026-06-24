@@ -23,15 +23,6 @@ const GROUPS: { key: string; items: PreviewItem[] }[] = [
     ],
   },
   {
-    key: "print",
-    items: [
-      { kind: "img", src: "/images/operating-manual-hero.gif", slot: 1 },
-      { kind: "img", src: "/images/operating-manual/operating-manual-1.png", slot: 2 },
-      { kind: "img", src: "/images/operating-manual/operating-manual-4.png", slot: 3 },
-      { kind: "img", src: "/images/operating-manual/operating-manual-3.png", slot: 4 },
-    ],
-  },
-  {
     key: "trailer-technologist",
     items: [
       { kind: "video", src: "/videos/magnolia.mp4", slot: 1 },
