@@ -4,8 +4,6 @@ export const metadata = {
   title: "Frontier AI Models | Tarshaa Krishnaraj",
 };
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export default function FrontierAIModels() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
@@ -23,15 +21,6 @@ export default function FrontierAIModels() {
               visuals and content to showcase real-world use cases.
             </p>
           </div>
-          <video
-            src={`${basePath}/videos/gif-o3.mp4`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            className="project-media"
-          />
           <a
             href="https://flora.ai/blog/tasting-notes-claude-opus-4.5"
             target="_blank"
