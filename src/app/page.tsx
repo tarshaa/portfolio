@@ -28,12 +28,14 @@ const HOVER_CLASSES: Record<string, string> = {
   "/product-innovation": "product-innovation-link",
   "/design-and-marketing": "design-and-marketing-link",
   "/frontier-ai-models": "frontier-ai-models-link",
+  "/print": "print-link",
   "/creative-context-cli": "creative-context-cli-link",
   "/trailer-technologist": "trailer-technologist-link",
 };
 
 const INLINE_PREVIEWS: Record<string, string> = {
   "/frontier-ai-models": "/videos/gif-o3.mp4",
+  "/print": "/images/operating-manual-hero.gif",
   "/creative-context-cli": "/videos/creative-context-cli.mp4",
 };
 
@@ -57,19 +59,30 @@ function ProjectCard({ project }: { project: ProjectLink }) {
 
   const inlineSrc = INLINE_PREVIEWS[project.href];
   if (inlineSrc) {
+    const isVideo = inlineSrc.endsWith(".mp4");
     return (
       <div className="project-row">
         {wrapped}
-        <video
-          src={`${basePath}${inlineSrc}`}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="row-hover-preview"
-          aria-hidden="true"
-        />
+        {isVideo ? (
+          <video
+            src={`${basePath}${inlineSrc}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="row-hover-preview"
+            aria-hidden="true"
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={`${basePath}${inlineSrc}`}
+            alt=""
+            className="row-hover-preview"
+            aria-hidden="true"
+          />
+        )}
       </div>
     );
   }

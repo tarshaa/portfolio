@@ -359,7 +359,8 @@ body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
 }
 
 .project-row:has(.frontier-ai-models-link:hover) .row-hover-preview,
-.project-row:has(.creative-context-cli-link:hover) .row-hover-preview {
+.project-row:has(.creative-context-cli-link:hover) .row-hover-preview,
+.project-row:has(.print-link:hover) .row-hover-preview {
   opacity: 1;
 }
 
