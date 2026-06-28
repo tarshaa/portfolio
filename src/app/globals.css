@@ -203,6 +203,32 @@ main.print-page {
   border-radius: 2px;
 }
 
+/* Wide process-stills sheet used on the Game page. */
+.game-stills {
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Merch image on /print: sized and left-aligned to match the hero gif
+   above it (which occupies the left half of the print-hero-row). */
+.print-merch {
+  align-self: flex-start;
+  width: calc((100% - 32px) / 2);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 760px) {
+  .print-merch {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 760px) {
   .print-hero-row {
     flex-direction: column;

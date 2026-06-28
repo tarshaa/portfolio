@@ -47,7 +47,7 @@ export default function Print() {
         <img
           src={`${basePath}/images/flora-labs-merch.jpg`}
           alt="FLORA Object Universe"
-          className="print-hero"
+          className="print-merch"
         />
       </main>
     </div>

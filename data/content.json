@@ -22,6 +22,11 @@
       "href": "/print",
       "title": "Print",
       "description": "Operating Manual, 2025"
+    },
+    {
+      "href": "/game",
+      "title": "Game",
+      "description": "Game designs, 2024"
     }
   ],
   "interactionsHeading": "02 Builds",
