@@ -23,6 +23,7 @@ export default function DesignAndMarketing() {
 
         <div className="flex flex-col gap-[6px]">
           <a href="#flora-series-a" className="project-link">+ FLORA Series A</a>
+          <a href="#flora-merch-design" className="project-link">+ FLORA Merch Design</a>
           <a href="#product-brand-bits" className="project-link">+ Product-Brand Bits</a>
           <a href="#flora-mcp-api" className="project-link">+ FLORA MCP + API</a>
         </div>
@@ -37,6 +38,20 @@ export default function DesignAndMarketing() {
           <ZoomableImage
             src={`${basePath}/images/flora-series-a.gif`}
             alt="FLORA Series A"
+            className="project-media"
+          />
+        </div>
+
+        <div id="flora-merch-design" className="project-block flex flex-col gap-[22px]">
+          <div className="flex flex-col gap-[8px]">
+            <h2 className="no-divider">FLORA Merch Design</h2>
+            <p className="project-detail-blurb">
+              Worked with Michelle Ma to design merch and fundamental modular brand elements
+            </p>
+          </div>
+          <ZoomableImage
+            src={`${basePath}/images/flora-labs-merch.jpg`}
+            alt="FLORA Merch Design"
             className="project-media"
           />
         </div>
