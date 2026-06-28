@@ -43,6 +43,12 @@ export default function Print() {
             </p>
           </div>
         </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/images/flora-labs-merch.jpg`}
+          alt="FLORA Object Universe"
+          className="print-hero"
+        />
       </main>
     </div>
   );
