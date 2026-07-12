@@ -4,6 +4,8 @@ export const metadata = {
   title: "Frontier AI Models | Tarshaa Krishnaraj",
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function FrontierAIModels() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen px-8 py-20 gap-16 sm:p-20">
@@ -38,6 +40,16 @@ export default function FrontierAIModels() {
             Tasting Notes - Recraft V4 ↗
           </a>
         </div>
+
+        <video
+          src={`${basePath}/videos/fauna.mp4`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          className="project-media"
+        />
       </main>
     </div>
   );

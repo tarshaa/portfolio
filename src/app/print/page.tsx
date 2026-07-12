@@ -43,12 +43,15 @@ export default function Print() {
             </p>
           </div>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${basePath}/images/flora-labs-merch.jpg`}
-          alt="FLORA Object Universe"
-          className="print-merch"
-        />
+        <div className="self-start flex w-full flex-col gap-[22px]">
+          <h2>flora objects</h2>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/flora-labs-merch.jpg`}
+            alt="FLORA Object Universe"
+            className="print-merch"
+          />
+        </div>
       </main>
     </div>
   );
