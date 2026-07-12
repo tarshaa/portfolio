@@ -241,7 +241,9 @@ html {
 }
 
 /* Pulse a green glow on the targeted project block's media when jumped to. */
-.project-block:target .project-media {
+.project-block:target .project-media,
+.project-block:target .print-hero,
+.project-block:target .print-merch {
   animation: project-glow 3.5s ease-out;
 }
 

@@ -19,7 +19,12 @@ export default function Print() {
             Operating Manual, December 2025.
           </p>
         </div>
-        <div className="print-hero-row">
+        <div className="self-start flex flex-col gap-[6px]">
+          <a href="#operating-manual" className="project-link">+ Operating Manual</a>
+          <a href="#flora-objects" className="project-link">+ flora objects</a>
+        </div>
+
+        <div id="operating-manual" className="project-block print-hero-row">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${basePath}/images/operating-manual-hero.gif`}
@@ -43,7 +48,10 @@ export default function Print() {
             </p>
           </div>
         </div>
-        <div className="self-start flex w-full flex-col gap-[22px]">
+        <div
+          id="flora-objects"
+          className="project-block self-start flex w-full flex-col gap-[22px]"
+        >
           <h2>flora objects</h2>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
