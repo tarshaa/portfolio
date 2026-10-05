@@ -353,7 +353,8 @@ html {
 }
 
 body:has(.product-innovation-link:hover)    .hover-group--product-innovation,
-body:has(.design-and-marketing-link:hover)  .hover-group--design-and-marketing,
+body:has(a:hover .design-and-marketing-link) .hover-group--design-and-marketing,
+body:has(a:focus-visible .design-and-marketing-link) .hover-group--design-and-marketing,
 body:has(.creative-context-cli-link:hover)  .hover-group--creative-context-cli,
 body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
   opacity: 1;
@@ -690,4 +691,26 @@ body::after {
     repeating-linear-gradient(to right, rgb(229 244 255 / 0.3) 0 1px, transparent 1px 7px) 24% center / 15px 3px no-repeat,
     repeating-linear-gradient(to right, rgb(229 244 255 / 0.3) 0 1px, transparent 1px 7px) 76% center / 15px 3px no-repeat,
     linear-gradient(rgb(197 236 245 / 0.4), rgb(197 236 245 / 0.4)) center / calc(100% - 14px) 1px no-repeat;
+}
+
+.medal-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 28px;
+}
+.medal-work-item { margin: 0; min-width: 0; }
+.medal-work-item .project-media {
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.medal-work-item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+@media (max-width: 600px) {
+  .medal-work-grid { grid-template-columns: 1fr; }
 }
