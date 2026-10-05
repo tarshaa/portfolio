@@ -119,11 +119,17 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-[28px]">
             <p data-bio>{c.bio}</p>
-            <ZoomableImage
-              src={`${basePath}/images/hero.jpg`}
-              alt=""
-              className="hero-image"
-            />
+            <div className="hero-frame">
+              <ZoomableImage
+                src={`${basePath}/images/hero.jpg`}
+                alt=""
+                className="hero-image"
+              />
+              <span className="hero-registration hero-registration--tl" aria-hidden="true" />
+              <span className="hero-registration hero-registration--tr" aria-hidden="true" />
+              <span className="hero-registration hero-registration--bl" aria-hidden="true" />
+              <span className="hero-registration hero-registration--br" aria-hidden="true" />
+            </div>
           </div>
         </div>
 

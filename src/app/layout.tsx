@@ -1,16 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { CursorTrail } from "@/components/CursorTrail";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roobert = localFont({
+  src: [
+    { path: "./fonts/Roobert-Regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/Roobert-RegularItalic.otf", weight: "400", style: "italic" },
+    { path: "./fonts/Roobert-Bold.otf", weight: "700", style: "normal" },
+    { path: "./fonts/Roobert-BoldItalic.otf", weight: "700", style: "italic" },
+  ],
+  variable: "--font-roobert",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${roobert.variable} antialiased`}>
+        <div className="page-micrographics" aria-hidden="true">
+          <i className="registration-mark" />
+          <i className="registration-mark" />
+          <i className="registration-mark" />
+          <i className="registration-mark" />
+          <i className="edge-ticks edge-ticks--left" />
+          <i className="edge-ticks edge-ticks--right" />
+        </div>
         {children}
         <CursorTrail />
       </body>

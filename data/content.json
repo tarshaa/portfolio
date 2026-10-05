@@ -1,7 +1,7 @@
 {
   "name": "Tarshaa Krishnaraj",
-  "bio": "Designing objects, interfaces, hardware. Currently leading Brand at FLORA.",
-  "projectsHeading": "01 Brand Design",
+  "bio": "Designing interfaces, brand and product. Medal, General Intuition, FLORA, and more.",
+  "projectsHeading": "01 Brand and Product",
   "projects": [
     {
       "href": "/product-innovation",
@@ -22,11 +22,6 @@
       "href": "/print",
       "title": "Print",
       "description": "Operating Manual, 2025"
-    },
-    {
-      "href": "/game",
-      "title": "Game",
-      "description": "Game designs, 2024"
     }
   ],
   "interactionsHeading": "02 Builds",

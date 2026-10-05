@@ -4,15 +4,17 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-underline: var(--underline);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-sans: var(--font-roobert), Arial, sans-serif;
+  --font-mono: var(--font-roobert), Arial, sans-serif;
 }
 
 :root {
-  --background: #f2f0ee;
-  --foreground: #171717;
-  --underline: #747170;
-  --color-scrollbar: #d4cfcd;
+  color-scheme: dark;
+  --background: #000000;
+  --foreground: #c7c7c7;
+  --underline: #949494;
+  --color-scrollbar: #444444;
+  --graphic-accent: #e5f4ff;
 }
 
 @layer base {
@@ -23,7 +25,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.5;
     letter-spacing: -0.0275em;
@@ -49,7 +51,7 @@ main.home {
 }
 
 .home [data-bio] {
-  color: #5a5856;
+  color: #a1a1a1;
 }
 
 .home .name-contacts a {
@@ -90,7 +92,7 @@ main.home {
 .project p {
   font-size: 1rem;
   line-height: 1.3;
-  color: #5a5856;
+  color: #a1a1a1;
 }
 
 .hero-image {
@@ -110,7 +112,7 @@ main.home {
 
 .project-detail-blurb {
   font-size: 1rem;
-  color: #5a5856;
+  color: #a1a1a1;
 }
 
 .heading-link {
@@ -191,7 +193,7 @@ main.print-page {
   gap: 12px;
   font-size: 1rem;
   line-height: 1.5;
-  color: #5a5856;
+  color: #a1a1a1;
 }
 
 .print-hero {
@@ -456,3 +458,143 @@ body:has(.trailer-technologist-link:hover)  .hover-group--trailer-technologist {
   }
 }
 
+/* Fine, static scan lines across the viewport; all controls stay interactive. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 4px,
+    rgb(255 255 255 / 0.05) 4px,
+    rgb(255 255 255 / 0.05) 5px
+  );
+}
+
+.page-micrographics {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  color: var(--graphic-accent);
+}
+
+.registration-mark {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 1px 11px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 11px 1px no-repeat;
+}
+
+.registration-mark:nth-child(1) { top: 24px; left: 24px; }
+.registration-mark:nth-child(2) { top: 24px; right: 24px; }
+.registration-mark:nth-child(3) { bottom: 24px; left: 24px; }
+.registration-mark:nth-child(4) { bottom: 24px; right: 24px; }
+
+.edge-ticks {
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 69px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(to bottom, var(--graphic-accent) 0 1px, transparent 1px 8px);
+}
+
+.edge-ticks--left { left: 29px; }
+.edge-ticks--right { right: 29px; }
+
+.home h2:not(.no-divider)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 17px;
+  height: 7px;
+  background: repeating-linear-gradient(to right, #666666 0 1px, transparent 1px 4px);
+}
+
+@media (max-width: 580px) {
+  .registration-mark:nth-child(1) { top: 12px; left: 12px; }
+  .registration-mark:nth-child(2) { top: 12px; right: 12px; }
+  .registration-mark:nth-child(3) { bottom: 12px; left: 12px; }
+  .registration-mark:nth-child(4) { bottom: 12px; right: 12px; }
+  .edge-ticks--left { left: 17px; }
+  .edge-ticks--right { right: 17px; }
+}
+
+/* Small registration details inspired by the reference's technical graphics. */
+.hero-frame {
+  position: relative;
+}
+
+.hero-registration {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-color: var(--graphic-accent);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+.hero-registration--tl { top: -5px; left: -5px; border-top-width: 1px; border-left-width: 1px; }
+.hero-registration--tr { top: -5px; right: -5px; border-top-width: 1px; border-right-width: 1px; }
+.hero-registration--bl { bottom: -5px; left: -5px; border-bottom-width: 1px; border-left-width: 1px; }
+.hero-registration--br { bottom: -5px; right: -5px; border-bottom-width: 1px; border-right-width: 1px; }
+
+.home h2:not(.no-divider)::after {
+  background: repeating-linear-gradient(to right, var(--graphic-accent) 0 1px, transparent 1px 4px);
+}
+
+.home a:focus-visible,
+.print-page a:focus-visible {
+  outline: 1px solid var(--graphic-accent);
+  outline-offset: 5px;
+}
+
+.home .name-contacts a:hover,
+.home .back-link:hover,
+.home .project-link:hover {
+  color: var(--graphic-accent);
+}
+
+/* Barely visible color wash sampled from the supplied reference palette. */
+body {
+  background-image:
+    linear-gradient(to bottom,
+      rgb(193 157 236 / 0.14) 0%,
+      rgb(153 85 240 / 0.17) 20%,
+      rgb(111 0 35 / 0.16) 37%,
+      rgb(9 12 55 / 0.16) 52%,
+      rgb(92 5 34 / 0.14) 64%,
+      rgb(239 73 21 / 0.18) 67%,
+      rgb(193 151 245 / 0.20) 67.3%,
+      rgb(52 11 44 / 0.12) 71%,
+      rgb(0 124 189 / 0.16) 84%,
+      rgb(169 121 225 / 0.15) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Shift one scan-line interval for a seamless, gentle drift. */
+body::after {
+  top: -5px;
+  animation: scan-line-drift 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scan-line-drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+    will-change: auto;
+  }
+}
