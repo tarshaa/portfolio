@@ -487,8 +487,8 @@ body::after {
   width: 11px;
   height: 11px;
   background:
-    linear-gradient(currentColor, currentColor) center / 1px 11px no-repeat,
-    linear-gradient(currentColor, currentColor) center / 11px 1px no-repeat;
+    linear-gradient(currentColor, currentColor) center / 1px 7px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 7px 1px no-repeat;
 }
 
 .registration-mark:nth-child(1) { top: 24px; left: 24px; }
@@ -597,4 +597,97 @@ body::after {
     animation: none;
     will-change: auto;
   }
+}
+
+/* Hero image is intentionally unframed. */
+.hero-registration { display: none; }
+
+/* Compact decorative slider beneath the introductory sentence. */
+.home [data-bio] {
+  position: relative;
+  padding-bottom: 29px;
+}
+.home [data-bio]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: 9px;
+  pointer-events: none;
+  opacity: 0.35;
+  background:
+    linear-gradient(var(--graphic-accent), var(--graphic-accent)) center / 100% 1px no-repeat,
+    repeating-linear-gradient(to right, var(--graphic-accent) 0 1px, transparent 1px 15px) center / 100% 5px no-repeat;
+  border-left: 1px solid var(--graphic-accent);
+  border-right: 1px solid var(--graphic-accent);
+}
+.home [data-bio]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  height: 9px;
+  background: var(--graphic-accent);
+  opacity: 0.75;
+  pointer-events: none;
+  animation: intro-slider-drift 7s ease-in-out infinite alternate;
+}
+@keyframes intro-slider-drift {
+  from { transform: translateX(3px); }
+  to { transform: translateX(144px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home [data-bio]::before {
+    animation: none;
+    transform: translateX(72px);
+  }
+}
+
+/* Full-width dotted-end slider, with a soft luminous marker. */
+.home [data-bio]::after {
+  width: 100%;
+  height: 14px;
+  border: 0;
+  opacity: 0.75;
+  background:
+    radial-gradient(circle, var(--graphic-accent) 0 3px, transparent 3.5px) left center / 14px 14px no-repeat,
+    radial-gradient(circle, var(--graphic-accent) 0 3px, transparent 3.5px) right center / 14px 14px no-repeat,
+    linear-gradient(rgb(197 236 245 / 0.55), rgb(197 236 245 / 0.55)) center / calc(100% - 14px) 1px no-repeat;
+  filter: drop-shadow(0 0 3px rgb(229 244 255 / 0.28));
+}
+.home [data-bio]::before {
+  width: 36px;
+  height: 4px;
+  bottom: 5px;
+  left: 7px;
+  border-radius: 3px;
+  opacity: 0.85;
+  box-shadow: 0 0 6px rgb(229 244 255 / 0.38);
+  animation: intro-slider-drift 9s ease-in-out infinite alternate;
+}
+@keyframes intro-slider-drift {
+  from { left: 7px; transform: none; }
+  to { left: calc(100% - 43px); transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home [data-bio]::before {
+    animation: none;
+    left: calc(50% - 18px);
+    transform: none;
+  }
+}
+
+/* Distributed dots, short calibration ticks, and a center crosshair. */
+.home [data-bio]::after {
+  background:
+    radial-gradient(circle, var(--graphic-accent) 0 3px, transparent 3.5px) left center / 14px 14px no-repeat,
+    radial-gradient(circle, var(--graphic-accent) 0 3px, transparent 3.5px) right center / 14px 14px no-repeat,
+    radial-gradient(circle, rgb(229 244 255 / 0.8) 0 1.5px, transparent 2px) center / 20% 14px repeat-x,
+    linear-gradient(var(--graphic-accent), var(--graphic-accent)) center / 1px 7px no-repeat,
+    linear-gradient(var(--graphic-accent), var(--graphic-accent)) center / 7px 1px no-repeat,
+    repeating-linear-gradient(to right, rgb(229 244 255 / 0.3) 0 1px, transparent 1px 7px) 24% center / 15px 3px no-repeat,
+    repeating-linear-gradient(to right, rgb(229 244 255 / 0.3) 0 1px, transparent 1px 7px) 76% center / 15px 3px no-repeat,
+    linear-gradient(rgb(197 236 245 / 0.4), rgb(197 236 245 / 0.4)) center / calc(100% - 14px) 1px no-repeat;
 }

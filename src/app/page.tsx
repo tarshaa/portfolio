@@ -125,10 +125,6 @@ export default async function Home() {
                 alt=""
                 className="hero-image"
               />
-              <span className="hero-registration hero-registration--tl" aria-hidden="true" />
-              <span className="hero-registration hero-registration--tr" aria-hidden="true" />
-              <span className="hero-registration hero-registration--bl" aria-hidden="true" />
-              <span className="hero-registration hero-registration--br" aria-hidden="true" />
             </div>
           </div>
         </div>

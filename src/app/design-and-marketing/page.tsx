@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ZoomableImage } from "@/components/ZoomableImage";
 
 export const metadata = {
-  title: "Design and Marketing | Tarshaa Krishnaraj",
+  title: "Product & Brand Design | Tarshaa Krishnaraj",
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -15,9 +15,9 @@ export default function DesignAndMarketing() {
           ← Back
         </Link>
         <div className="flex flex-col gap-[8px]">
-          <h1>Design and Marketing</h1>
+          <h1>Product & Brand Design</h1>
           <p className="project-detail-blurb">
-            Innovated Design and Marketing from Seed Stage to Series A.
+            Innovated Product & Brand Design from Seed Stage to Series A.
           </p>
         </div>
 
