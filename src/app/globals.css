@@ -714,3 +714,22 @@ body::after {
 @media (max-width: 600px) {
   .medal-work-grid { grid-template-columns: 1fr; }
 }
+
+/* Give mobile layouts more breathing room on both sides. */
+@media (max-width: 639px) {
+  div:has(> main.home),
+  div:has(> main.print-page) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  main.home,
+  main.home.detail-page,
+  main.print-page {
+    width: 100%;
+    min-width: 0;
+  }
+  main.home h2,
+  main.home.detail-page h2 {
+    width: 100%;
+  }
+}
