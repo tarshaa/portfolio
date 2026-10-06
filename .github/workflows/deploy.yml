@@ -24,10 +24,11 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - uses: actions/configure-pages@v5
+        id: pages
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /portfolio
-      - uses: actions/configure-pages@v5
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
