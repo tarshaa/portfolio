@@ -37,7 +37,7 @@ export default function Techniques() {
           </p>
         </div>
         <div className="flex flex-col gap-[8px]">
-          <a href="https://flora.ai/techniques" target="_blank" rel="noopener noreferrer" className="project-link">
+          <a href="https://flora.ai/product-technique" target="_blank" rel="noopener noreferrer" className="project-link">
             Explore FLORA Techniques ↗
           </a>
           <a href="https://www.figma.com/deck/8pdDowjy9j9aVVz4kEyEts/Tarshaa-s-Portfolio?node-id=7100-152" target="_blank" rel="noopener noreferrer" className="project-link">
