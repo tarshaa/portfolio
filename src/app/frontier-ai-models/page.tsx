@@ -41,6 +41,23 @@ export default function FrontierAIModels() {
           </a>
         </div>
 
+        <div className="flex flex-col gap-[22px]">
+          <div className="flex flex-col gap-[8px]">
+            <h2 className="no-divider">FLORA MCP &amp; API</h2>
+            <p className="project-detail-blurb">
+              Designed and marketed surfaces for FLORA’s MCP and API.
+            </p>
+          </div>
+          <a
+            href="https://flora.ai/mcp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            Explore FLORA MCP &amp; API ↗
+          </a>
+        </div>
+
         <video
           src={`${basePath}/videos/fauna.mp4`}
           autoPlay
