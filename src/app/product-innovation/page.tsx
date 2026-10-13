@@ -32,7 +32,7 @@ export default function ProductInnovation() {
         <div className="flex flex-col gap-[22px]">
           <div className="flex flex-col gap-[8px]">
             <a
-              href="https://flora.ai/techniques"
+              href="https://flora.ai/product-technique"
               target="_blank"
               rel="noopener noreferrer"
               className="heading-link"
