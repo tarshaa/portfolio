@@ -28,7 +28,7 @@
     font-family: var(--font-geist-mono), monospace;
     font-size: 1rem;
     line-height: 1.5;
-    letter-spacing: 0;
+    letter-spacing: -0.02em;
   }
   h1 {
     font-size: 1.0625rem;
