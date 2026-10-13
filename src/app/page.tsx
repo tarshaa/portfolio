@@ -34,6 +34,7 @@ const HOVER_CLASSES: Record<string, string> = {
 };
 
 const INLINE_PREVIEWS: Record<string, string> = {
+  "/techniques": "/videos/techniques.mp4",
   "/frontier-ai-models": "/videos/gif-o3.mp4",
   "/print": "/images/operating-manual-hero.gif",
   "/creative-context-cli": "/videos/creative-context-cli.mp4",
@@ -46,12 +47,10 @@ const COMPANY_WEBSITES: Record<string, string> = {
   "FLORA": "https://flora.ai/",
   "Magnolia Pictures": "https://www.magnoliapictures.com/",
   "Disney": "https://www.disney.com/",
-  "Pinterest": "https://www.pinterest.com/",
-  "Claude": "https://claude.ai/",
 };
 
 function CompanyText({ text }: { text: string }) {
-  return text.split(/(Magnolia Pictures|General Intuition|Medal|FLORA|Disney|Pinterest|Claude)/g).map((part, index) =>
+  return text.split(/(Magnolia Pictures|General Intuition|Medal|FLORA|Disney)/g).map((part, index) =>
     COMPANY_WEBSITES[part] ? (
       <a key={index} href={COMPANY_WEBSITES[part]} target="_blank" rel="noopener noreferrer" className="company-link">
         {part}

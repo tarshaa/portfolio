@@ -1,12 +1,17 @@
 {
   "name": "Tarshaa Krishnaraj",
   "bio": "Designing interfaces, brand and product. Medal, General Intuition, FLORA, Magnolia Pictures, and Disney.",
-  "projectsHeading": "01 Brand and Product",
+  "projectsHeading": "01 Product and Brand",
   "projects": [
     {
       "href": "/product-innovation",
       "title": "Product innovation",
       "description": "Designed and innovated designs across product surfaces."
+    },
+    {
+      "href": "/techniques",
+      "title": "Techniques",
+      "description": "Designed compressed generative AI workflows for FLORA."
     },
     {
       "href": "/design-and-marketing",
