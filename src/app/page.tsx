@@ -119,6 +119,19 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-[28px]">
             <p data-bio>{c.bio}</p>
+            <ul aria-label="Companies I’ve worked with" className="flex flex-col gap-[22px] text-[#b8e6bd]">
+              {[
+                { company: "Medal / General Intuition", role: "Product Design (Contract)" },
+                { company: "FLORA", role: "Brand & Product Design" },
+                { company: "Magnolia Pictures", role: "Brand Design" },
+                { company: "Disney", role: "Brand Design" },
+              ].map(({ company, role }) => (
+                <li key={company} className="flex flex-col gap-[4px]">
+                  <p className="text-[18px] leading-[1.3] sm:text-[20px]">{company}</p>
+                  <p className="text-[11px] uppercase tracking-[0.08em] leading-[1.5] sm:text-[12px]">{role}</p>
+                </li>
+              ))}
+            </ul>
             <div className="hero-frame">
               <ZoomableImage
                 src={`${basePath}/images/hero.jpg`}
