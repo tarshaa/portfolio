@@ -3,14 +3,11 @@ import localFont from "next/font/local";
 import { CursorTrail } from "@/components/CursorTrail";
 import "./globals.css";
 
-const roobertSemiMono = localFont({
-  src: [
-    { path: "./fonts/RoobertSemiMonoTrial-Regular.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/RoobertSemiMonoTrial-RegularItalic.woff2", weight: "400", style: "italic" },
-    { path: "./fonts/RoobertSemiMonoTrial-Bold.woff2", weight: "700", style: "normal" },
-    { path: "./fonts/RoobertSemiMonoTrial-BoldItalic.woff2", weight: "700", style: "italic" },
-  ],
-  variable: "--font-roobert-semimono",
+const geistMono = localFont({
+  src: "./fonts/GeistMono.woff2",
+  weight: "100 900",
+  style: "normal",
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -30,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roobertSemiMono.variable} antialiased`}>
+      <body className={`${geistMono.variable} antialiased`}>
         <div className="page-micrographics" aria-hidden="true">
           <i className="registration-mark" />
           <i className="registration-mark" />
