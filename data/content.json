@@ -9,9 +9,10 @@
       "description": "Designed and innovated designs across product surfaces."
     },
     {
-      "href": "/techniques",
+      "href": "https://flora.ai/product-technique",
       "title": "Techniques",
-      "description": "Designed compressed generative AI workflows for FLORA."
+      "description": "Designed compressed generative AI workflows for FLORA.",
+      "external": true
     },
     {
       "href": "/design-and-marketing",
