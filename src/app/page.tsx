@@ -119,16 +119,16 @@ export default async function Home() {
           </div>
           <div className="flex flex-col gap-[28px]">
             <p data-bio>{c.bio}</p>
-            <ul aria-label="Companies I’ve worked with" className="grid grid-cols-2 gap-x-[20px] gap-y-[14px] text-[#b8e6bd]">
+            <ul aria-label="Companies I’ve worked with" className="flex flex-col gap-[12px] text-white">
               {[
-                { company: "Medal / General Intuition", role: "Product Design (Contract)" },
-                { company: "FLORA", role: "Brand & Product Design" },
-                { company: "Magnolia Pictures", role: "Brand Design" },
-                { company: "Disney", role: "Brand Design" },
+                { company: "Medal / General Intuition", role: "Product design (contract)" },
+                { company: "FLORA", role: "Brand & product design" },
+                { company: "Magnolia Pictures", role: "Brand design" },
+                { company: "Disney", role: "Brand design" },
               ].map(({ company, role }) => (
                 <li key={company} className="flex flex-col gap-[3px]">
                   <p className="text-[12px] leading-[1.4]">{company}</p>
-                  <p className="text-[9px] uppercase tracking-[0.04em] leading-[1.5] opacity-75">{role}</p>
+                  <p className="text-[10px] leading-[1.5] opacity-75">{role}</p>
                 </li>
               ))}
             </ul>
