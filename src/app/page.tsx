@@ -39,22 +39,41 @@ const INLINE_PREVIEWS: Record<string, string> = {
   "/creative-context-cli": "/videos/creative-context-cli.mp4",
 };
 
+
+const COMPANY_WEBSITES: Record<string, string> = {
+  "Medal": "https://medal.tv/",
+  "General Intuition": "https://www.generalintuition.com/",
+  "FLORA": "https://flora.ai/",
+  "Magnolia Pictures": "https://www.magnoliapictures.com/",
+  "Disney": "https://www.disney.com/",
+  "Pinterest": "https://www.pinterest.com/",
+  "Claude": "https://claude.ai/",
+};
+
+function CompanyText({ text }: { text: string }) {
+  return text.split(/(Magnolia Pictures|General Intuition|Medal|FLORA|Disney|Pinterest|Claude)/g).map((part, index) =>
+    COMPANY_WEBSITES[part] ? (
+      <a key={index} href={COMPANY_WEBSITES[part]} target="_blank" rel="noopener noreferrer" className="company-link">
+        {part}
+      </a>
+    ) : part,
+  );
+}
+
 function ProjectCard({ project }: { project: ProjectLink }) {
   const hoverClass = HOVER_CLASSES[project.href];
-  const inner = (
+  const title = <h3 className={hoverClass}>{project.title}</h3>;
+  const wrapped = (
     <div className="project flex flex-col gap-[6px]">
-      <h3 className={hoverClass}>{project.title}</h3>
+      {project.external ? (
+        <a href={project.href} target="_blank" rel="noopener noreferrer">{title}</a>
+      ) : (
+        <Link href={project.href}>{title}</Link>
+      )}
       {project.description && (
-        <p className="whitespace-pre-line">{project.description}</p>
+        <p className="whitespace-pre-line"><CompanyText text={project.description} /></p>
       )}
     </div>
-  );
-  const wrapped = project.external ? (
-    <a href={project.href} target="_blank" rel="noopener noreferrer">
-      {inner}
-    </a>
-  ) : (
-    <Link href={project.href}>{inner}</Link>
   );
 
   const inlineSrc = INLINE_PREVIEWS[project.href];
@@ -118,7 +137,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-[28px]">
-            <p data-bio>{c.bio}</p>
+            <p data-bio><CompanyText text={c.bio} /></p>
             <div className="hero-frame">
               <ZoomableImage
                 src={`${basePath}/images/hero.jpg`}

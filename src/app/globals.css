@@ -4,8 +4,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-underline: var(--underline);
-  --font-sans: var(--font-geist-mono), monospace;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: var(--font-roobert-semimono), monospace;
+  --font-mono: var(--font-roobert-semimono), monospace;
 }
 
 :root {
@@ -732,4 +732,15 @@ body::after {
   main.home.detail-page h2 {
     width: 100%;
   }
+}
+
+.company-link {
+  text-decoration: underline;
+  text-decoration-thickness: 0.6px;
+  text-underline-offset: 3px;
+}
+
+.company-link:hover,
+.company-link:focus-visible {
+  color: #ffffff;
 }
