@@ -34,7 +34,7 @@ const HOVER_CLASSES: Record<string, string> = {
 };
 
 const INLINE_PREVIEWS: Record<string, string> = {
-  "/techniques": "/videos/techniques.mp4",
+  "https://flora.ai/product-technique": "/videos/techniques.mp4",
   "/frontier-ai-models": "/videos/gif-o3.mp4",
   "/print": "/images/operating-manual-hero.gif",
   "/creative-context-cli": "/videos/creative-context-cli.mp4",
