@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tarshaa/work-website
-          ref: 77856f6c48e1dccd437cc2fb62deb4a8ca45657a
+          ref: a703e0b9ee297a090ae608804a0d286bd1dafc63
           path: site
           persist-credentials: false
       - uses: actions/configure-pages@v5
@@ -56,6 +56,7 @@ jobs:
           assert Path("site/images/flora-series-a.gif").is_file()
           assert Path("site/assets/elements-cover-loop.gif").is_file()
           assert "model-eval-loops-32" in Path("site/index.html").read_text()
+          assert "subtle-covers-33" in Path("site/index.html").read_text()
           for model in ("omni", "recraft", "opus"):
               assert Path(f"site/assets/eval-{model}-loop-v32.gif").is_file()
           PY
