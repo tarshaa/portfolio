@@ -19,19 +19,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Check out the approved portfolio
+        uses: actions/checkout@v4
         with:
-          node-version: 24
-          cache: npm
-      - run: npm ci
+          repository: tarshaa/work-website
+          ref: 2920e7f0327580ea8d5f2d2e3b640b21cf8cccb9
+          path: site
+          persist-credentials: false
       - uses: actions/configure-pages@v5
-        id: pages
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Preserve existing media and project links
+        run: |
+          cp -R public/. site/
+          python3 - <<'PY'
+          from pathlib import Path
+          aliases = {
+              "techniques": "/techniques.html",
+              "frontier-ai-models": "/models.html",
+              "print": "/physical.html",
+              "creative-context-cli": "/creative-context-cli.html",
+              "trailer-technologist": "/film.html",
+              "product-innovation": "/feature-demos.html",
+              "design-and-marketing": "/",
+              "game": "/",
+          }
+          for old, target in aliases.items():
+              page = Path("site") / old / "index.html"
+              page.parent.mkdir(parents=True, exist_ok=True)
+              page.write_text(
+                  '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                  '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                  f'<meta http-equiv="refresh" content="0;url={target}">'
+                  f'<link rel="canonical" href="https://tarshaakrishnaraj.com{target}">'
+                  '<title>Tarshaa Krishnaraj — Portfolio</title></head>'
+                  f'<body><a href="{target}">Continue to the portfolio</a></body></html>'
+              )
+          assert Path("site/images/flora-series-a.gif").is_file()
+          assert Path("site/assets/elements-cover-loop.gif").is_file()
+          assert "autoplay-gifs-29" in Path("site/index.html").read_text()
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: site
 
   deploy:
     needs: build

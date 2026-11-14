@@ -1,20 +1,22 @@
 # Portfolio
 
-Tarshaa Krishnaraj — personal site.
+Tarshaa Krishnaraj — personal site at https://tarshaakrishnaraj.com.
 
-Built with Next.js (App Router) + Tailwind v4. Statically exported and deployed to GitHub Pages.
+## Current publication
 
-## Local development
+The GitHub Pages workflow publishes the static portfolio from
+[tarshaa/work-website](https://github.com/tarshaa/work-website), pinned to
+`2920e7f0327580ea8d5f2d2e3b640b21cf8cccb9`. This is the version with original-resolution,
+automatically looping GIF covers.
 
-```bash
-npm install
-npm run dev
-```
+To publish a newer approved version, update the checkout ref in
+`.github/workflows/deploy.yml`. A push to this repository's `main` branch
+redeploys the custom domain using its existing GitHub Pages configuration.
 
-The site reads its content from `data/content.json` at build time. Edit that file, then refresh / rebuild.
+The workflow preserves the media under `public/`, including the Series A
+animation, and redirects the previous project URLs to their current pages.
 
-## Deploy
+## Previous site
 
-`main` is auto-deployed by `.github/workflows/deploy.yml` to `https://tarshaa.github.io/portfolio/`.
-
-The build sets `NEXT_PUBLIC_BASE_PATH=/portfolio` so all asset and route references work under the project-page URL prefix. To deploy under a different path (e.g. a custom domain), change that env var in the workflow (or unset it).
+The previous Next.js source and its content remain here for reference and
+rollback. It is no longer the custom domain's deployed build.
