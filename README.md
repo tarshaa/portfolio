@@ -6,7 +6,7 @@ Tarshaa Krishnaraj — personal site at https://tarshaakrishnaraj.com.
 
 The GitHub Pages workflow publishes the static portfolio from
 [tarshaa/work-website](https://github.com/tarshaa/work-website), pinned to
-`2920e7f0327580ea8d5f2d2e3b640b21cf8cccb9`. This is the version with original-resolution,
+`d5418bb93d02b03b5061c352c11432c7457ee30a`. This is the version with original-resolution,
 automatically looping GIF covers.
 
 To publish a newer approved version, update the checkout ref in
