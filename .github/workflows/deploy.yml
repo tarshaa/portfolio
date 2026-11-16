@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,15 +19,32 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tarshaa/work-website
-          ref: a7efbc7bac2b55aef2c2c4b93c6148773a3564bd
-          path: site
+          ref: 6200e69666671bb011516f27dfd5cdea2e76821f
+          path: approved
           persist-credentials: false
       - uses: actions/configure-pages@v5
-      - name: Preserve existing media and project links
+      - name: Assemble the approved site without reducing media quality
         run: |
-          cp -R public/. site/
           python3 - <<'PY'
+          import json, shutil, subprocess
           from pathlib import Path
+          source, site = Path("approved"), Path("site")
+          site.mkdir()
+          for name in json.loads((source / "site-files.json").read_text()):
+              src, dst = source / name, site / name
+              assert src.is_file(), f"Missing approved asset: {name}"
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copy2(src, dst)
+          subprocess.run(["python3", str(site / "assemble-media.py")], check=True)
+          shutil.rmtree(site / "media-parts")
+          (site / "assemble-media.py").unlink()
+          (site / "media-parts.json").unlink()
+          # Keep previously shared media URLs without overwriting approved files.
+          for src in Path("public").rglob("*"):
+              dst = site / src.relative_to("public")
+              if src.is_file() and not dst.exists():
+                  dst.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dst)
           aliases = {
               "techniques": "/techniques.html",
               "frontier-ai-models": "/models.html",
@@ -43,7 +56,7 @@ jobs:
               "game": "/",
           }
           for old, target in aliases.items():
-              page = Path("site") / old / "index.html"
+              page = site / old / "index.html"
               page.parent.mkdir(parents=True, exist_ok=True)
               page.write_text(
                   '<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -53,17 +66,19 @@ jobs:
                   '<title>Tarshaa Krishnaraj — Portfolio</title></head>'
                   f'<body><a href="{target}">Continue to the portfolio</a></body></html>'
               )
-          assert Path("site/images/flora-series-a.gif").is_file()
-          assert Path("site/assets/elements-cover-loop.gif").is_file()
-          assert "model-eval-loops-32" in Path("site/index.html").read_text()
-          assert "clean-micrographics-36" in Path("site/index.html").read_text()
-          for model in ("omni", "recraft", "opus"):
-              assert Path(f"site/assets/eval-{model}-loop-v32.gif").is_file()
+          assert "preview.js" in (site / "index.html").read_text()
+          assert (site / "operating-manual.html").is_file()
+          for name in ("image-editor-loop-1080.gif", "creative-directions-loop-1080.gif", "fauna-cover-large-4k-loop.gif"):
+              assert (site / "assets" / name).stat().st_size > 1000000
+          for i in range(1, 9):
+              assert (site / "assets" / f"evaluation-study-{i}.png").is_file()
+          size = sum(p.stat().st_size for p in site.rglob("*") if p.is_file())
+          assert size < 1000000000, f"Site exceeds Pages size limit: {size}"
+          print(f"Approved site: {size:,} bytes")
           PY
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
