@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: tarshaa/work-website
-          ref: 7959704a5aa3d5ce2d7042d5b270406a5c795776
+          ref: 3260080f7009cdd0fdfcf7a9bbdc6abf55d0d7e0
           path: approved
           persist-credentials: false
       - uses: actions/configure-pages@v5
